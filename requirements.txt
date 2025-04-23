@@ -1,0 +1,8 @@
+asgiref==3.8.1
+Django==4.2.20
+numpy==2.0.2
+opencv-python==4.11.0.86
+pillow==11.2.1
+psycopg2-binary==2.9.10
+sqlparse==0.5.3
+typing_extensions==4.13.2

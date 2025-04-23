@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+        background-image: url("{% static 'quizzes/adminstration04.webp' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+    .login-container {
+        background-color: rgba(255, 255, 255, 0.9); /* Optional: white card with transparency */
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+</style>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="login-container" style="max-width: 400px; width: 100%;">
+        <h3 class="text-center">🔐 Login</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <div class="mt-3 text-center">
+            <a href="{% url 'signup' %}">Don't have an account? Sign up</a><br>
+            <a href="{% url 'send_otp' %}">Forgot Password?</a><br>
+            <a href="/admin/login/" class="btn btn-sm btn-secondary mt-2">👨‍💼 Admin Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
